@@ -4,8 +4,8 @@ const AuthPage = (props) => {
     const onSubmit = (e) => {
       e.preventDefault();
       const { value } = e.target[0];
-      axios.post("http://localhost:3001/authenticate", {username: value}).then(r => props.onAuth({...r.data, secret: value})).catch(err => console.log(err));
-      
+      axios.post("https://nodejs-chat-backend-z533.onrender.com/authenticate", {username: value}).then(r => props.onAuth({...r.data, secret: value})).catch(err => console.log(err));
+
       props.onAuth({ username: value, secret: value });
     };
   
